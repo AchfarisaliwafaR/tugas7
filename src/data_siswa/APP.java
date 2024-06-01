@@ -436,21 +436,24 @@ public class APP extends javax.swing.JFrame {
     }//GEN-LAST:event_tNISMouseClicked
 
     private void tNISKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tNISKeyTyped
-    if (!Character.isDigit(evt.getKeyChar())){
+    if (!Character.isDigit(evt.getKeyChar())&&
+        !Character.isSpaceChar(evt.getKeyChar())){
         evt.consume();
     }
     }//GEN-LAST:event_tNISKeyTyped
 
     private void tNAMAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tNAMAKeyTyped
-    if (!Character.isAlphabetic(evt.getKeyChar())){
+    if (!Character.isAlphabetic(evt.getKeyChar()) &&
+        !Character.isSpaceChar(evt.getKeyChar())){
         evt.consume();
     }
     }//GEN-LAST:event_tNAMAKeyTyped
 
     private void tTEMPATLAHIRKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tTEMPATLAHIRKeyTyped
-    if (!Character.isAlphabetic(evt.getKeyChar())){
+    if (!Character.isAlphabetic(evt.getKeyChar()) &&
+        !Character.isSpaceChar(evt.getKeyChar())){
         evt.consume();
-    }
+    }    
     }//GEN-LAST:event_tTEMPATLAHIRKeyTyped
 
     /**
