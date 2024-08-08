@@ -21,7 +21,7 @@ public class APP extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
-     */
+     */  
     public APP() {
         initComponents();
         reset();
@@ -92,6 +92,7 @@ public class APP extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(142, 68, 173));
 
+        jLabel1.setBackground(new java.awt.Color(142, 68, 173));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -110,7 +111,7 @@ public class APP extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel2.setText("NIS");
 
@@ -175,6 +176,15 @@ public class APP extends javax.swing.JFrame {
         pPOTO.setText("POTO");
         pPOTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pPOTO.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pPOTO.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                pPOTOAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         pPOTO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pPOTOMouseClicked(evt);
@@ -258,7 +268,7 @@ public class APP extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel4.setBackground(new java.awt.Color(51, 102, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -368,7 +378,7 @@ public class APP extends javax.swing.JFrame {
     }//GEN-LAST:event_rPActionPerformed
 
     private void pPOTOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPOTOMouseClicked
-        try {
+         try {
             JFileChooser chooser = new JFileChooser();
             chooser.showOpenDialog(null);
             File file = chooser.getSelectedFile();
@@ -398,7 +408,7 @@ public class APP extends javax.swing.JFrame {
 
         } else {
             vKELAMIN.setText("JENIS KELAMIN: TIDAK TERDEFINISI");
-        }
+        } 
         SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
         String tglLahir = String.valueOf(sd.format(tTANGGALLAHIR.getDate()));
         vTTL.setText("TTL: "+tTEMPATLAHIR.getText()+","+ tglLahir);
@@ -418,7 +428,7 @@ public class APP extends javax.swing.JFrame {
             Date tglUpload = new Date();
             SimpleDateFormat fr = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
             String tglBaru = String.valueOf(fr.format(tglUpload));
-            destFile = new File(filepatch + tglBaru.toString());
+            destFile = new File(filepatch + tglBaru.toString() );
             Files.copy(sourceFile.toPath(), destFile.toPath());
             vFOTO.setText("FOTO: " + destFile.toString());
             
@@ -436,7 +446,7 @@ public class APP extends javax.swing.JFrame {
     }//GEN-LAST:event_tNISMouseClicked
 
     private void tNISKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tNISKeyTyped
-    if (!Character.isDigit(evt.getKeyChar())&&
+     if (!Character.isDigit(evt.getKeyChar())&&
         !Character.isSpaceChar(evt.getKeyChar())){
         evt.consume();
     }
@@ -455,6 +465,10 @@ public class APP extends javax.swing.JFrame {
         evt.consume();
     }    
     }//GEN-LAST:event_tTEMPATLAHIRKeyTyped
+
+    private void pPOTOAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pPOTOAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pPOTOAncestorAdded
 
     /**
      * @param args the command line arguments

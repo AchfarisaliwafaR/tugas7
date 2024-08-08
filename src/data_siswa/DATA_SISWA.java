@@ -6,7 +6,7 @@ package data_siswa;
 
 /**
  *
- * @author user
+ * @author WINDOWS 10
  */
 public class DATA_SISWA {
 
